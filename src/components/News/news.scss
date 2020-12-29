@@ -1,0 +1,26 @@
+.news{
+  display: flex;
+  flex-flow: row wrap;
+  width: 100%;
+  justify-content: center;
+}
+
+.oneNews{
+  width: 30%;
+  border-bottom: 1px double #191970;
+  padding: 1rem;
+  margin: 1rem;
+    &__title {
+      font-weight: bold;
+      color:#191970;
+      padding: .3rem;
+    }
+    &__url {
+      font-style: italic;
+      padding: .5rem;
+    }
+}
+
+.badge {
+  background-color: #DA70D6;
+}
