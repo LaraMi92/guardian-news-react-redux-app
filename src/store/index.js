@@ -1,7 +1,7 @@
-// createStore provient du package redux
+// createStore
 import { createStore, applyMiddleware } from 'redux';
 
-// sert à afficher nos devtools redux
+// devtools redux
 import { composeWithDevTools } from 'redux-devtools-extension';
 
 // middlewares
