@@ -1,4 +1,4 @@
-import { NEWS_OBTAINED } from './actions';
+import { NEWS_OBTAINED, DATA_FAILED } from './actions';
 
 const initialState = {
   news: [
@@ -9,6 +9,8 @@ const initialState = {
     },
 
   ],
+
+  error: '',
 
 };
 
@@ -22,6 +24,14 @@ function reducer(oldState = initialState, action) {
         news: [
           ...action.news,
         ],
+      };
+    }
+
+    case DATA_FAILED: {
+      console.log('havent fetched data', action.error);
+      return {
+        ...oldState,
+        error: action.error,
       };
     }
 

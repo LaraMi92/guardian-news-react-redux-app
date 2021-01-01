@@ -11,16 +11,16 @@ const News = ({ news }) => (
   <div className="news">
 
     {news.map((oneNews) => (
-      <div key={oneNews.id} className="oneNews">
+      <div key={oneNews.id} className="one-news">
         {oneNews.webTitle
         && (
-        <div className="oneNews__title">
+        <div className="one-news__title">
           {oneNews.webTitle}
         </div>
         )}
         {oneNews.sectionName && <span className="badge">{oneNews.sectionName} </span>}
-        <div className="oneNews__url">
-          {oneNews.webUrl && <a target="_blank" className="oneNews__url" href={oneNews.webUrl}> <i className="fas fa-external-link-alt" /> </a>}
+        <div className="one-news__url">
+          {oneNews.webUrl && <a target="_blank" className="one-news__url" href={oneNews.webUrl}> <i className="fas fa-external-link-alt" /> </a>}
         </div>
       </div>
     ))}

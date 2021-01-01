@@ -2,6 +2,7 @@
 
 export const GATHER_NEWS = 'GATHER_NEWS';
 export const NEWS_OBTAINED = 'NEWS_OBTAINED';
+export const DATA_FAILED = 'DATA_FAILED';
 
 // action creator
 // calling API
@@ -14,4 +15,10 @@ export const getNews = (value) => ({
 export const dataObtained = (response) => ({
   type: NEWS_OBTAINED,
   news: response,
+});
+
+// no data gathered
+export const dataFailed = (error) => ({
+  type: DATA_FAILED,
+  error: error,
 });

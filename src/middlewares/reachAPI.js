@@ -1,12 +1,17 @@
+// call to API
 import axios from 'axios';
-import { GATHER_NEWS, dataObtained } from 'src/store/actions';
+// actions from store
+import { GATHER_NEWS, dataObtained, dataFailed } from 'src/store/actions';
+// key to unlock request
 import { API_KEY } from '../../config/apiKey';
+
+// dispatch data to connected news container if success, error component if not
 
 const callToData = (store) => (next) => (action) => {
   if (action.type === GATHER_NEWS) {
     axios.get(`https://content.guardianapis.com/search?to-date=${action.query}&format=json&q=fun%20story&api-key=${API_KEY}`)
       .then((response) => store.dispatch(dataObtained(response.data.response.results)))
-      .catch((error) => console.log('Sorry no news could be fetched', error));
+      .catch((error) => store.dispatch(dataFailed(error)));
   }
 
   next(action);
