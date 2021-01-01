@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { GATHER_NEWS, dataObtained } from 'src/store/actions';
-import { API_KEY } from '../../apiKey';
+import { API_KEY } from '../../config/apiKey';
 
 const callToData = (store) => (next) => (action) => {
   if (action.type === GATHER_NEWS) {
