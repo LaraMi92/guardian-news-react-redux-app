@@ -3,7 +3,7 @@ import axios from 'axios';
 // actions from store
 import { GATHER_NEWS, dataObtained, dataFailed } from 'src/store/actions';
 // key to unlock request
-import { API_KEY } from '../../config/apiKey';
+import { API_KEY } from './apiKey';
 
 // dispatch data to connected news container if success, error component if not
 

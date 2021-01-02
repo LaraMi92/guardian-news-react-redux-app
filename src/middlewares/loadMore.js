@@ -3,7 +3,7 @@ import axios from 'axios';
 // actions from store
 import { LOAD_MORE, dataAfterScroll, dataFailed } from 'src/store/actions';
 // key to unlock request
-import { API_KEY } from '../../config/apiKey';
+import { API_KEY } from './apiKey';
 
 // load more data by incrementing the page and launching new request with date value kept in store
 

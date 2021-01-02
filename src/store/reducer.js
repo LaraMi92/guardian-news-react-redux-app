@@ -45,7 +45,7 @@ function reducer(oldState = initialState, action) {
     }
 
     case LOAD_MORE: {
-      console.log('increment page, number', action.page);
+      console.log('increment page, number');
       return {
         ...oldState,
         page: oldState.page + 1,

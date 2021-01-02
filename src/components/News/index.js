@@ -1,5 +1,6 @@
 // == Import npm
 import React from 'react';
+// package to enable infinite scroll
 import { useBottomScrollListener } from 'react-bottom-scroll-listener';
 
 // == Import
