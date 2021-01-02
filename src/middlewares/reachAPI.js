@@ -9,7 +9,7 @@ import { API_KEY } from '../../config/apiKey';
 
 const callToData = (store) => (next) => (action) => {
   if (action.type === GATHER_NEWS) {
-    axios.get(`https://content.guardianapis.com/search?to-date=${action.query}&format=json&q=fun%20story&api-key=${API_KEY}`)
+    axios.get(`https://content.guardianapis.com/search?to-date=${action.query}&format=json&q=fun%20story&api-key=${API_KEY}&page=1`)
       .then((response) => store.dispatch(dataObtained(response.data.response.results)))
       .catch((error) => store.dispatch(dataFailed(error)));
   }

@@ -6,6 +6,7 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 
 // middlewares
 import callToData from 'src/middlewares/reachAPI';
+import loadMoreData from 'src/middlewares/loadMore';
 
 // reducer
 import reducer from './reducer';
@@ -16,6 +17,8 @@ const store = createStore(
   composeWithDevTools(
     // middleware to intercept API call
     applyMiddleware(callToData),
+    // middleware to load more on scrolling
+    applyMiddleware(loadMoreData),
   ),
 );
 
