@@ -9,28 +9,33 @@ import PropTypes from 'prop-types';
 
 // == Composant
 const News = ({ news, infiniteScroll }) => {
+  // only show down arrow for scrolling conditionnally
+  const showArrow = () => (
+    <div className="news">
+      <i className="fas fa-long-arrow-alt-down" onClick={infiniteScroll} />
+    </div>
+  );
   useBottomScrollListener(infiniteScroll);
   return (
-    <div className="news-container">
-      <div className="news">
-        {news.map((oneNews) => (
-          <div key={oneNews.id} className="one-news">
-            {oneNews.webTitle
+
+    <div className="news">
+      {news.map((oneNews) => (
+        <div key={oneNews.id} className="one-news">
+          {oneNews.webTitle
         && (
         <div className="one-news__title">
           {oneNews.webTitle}
         </div>
         )}
-            {oneNews.sectionName && <span className="badge">{oneNews.sectionName} </span>}
-            <div className="one-news__url">
-              {oneNews.webUrl && <a target="_blank" className="one-news__url" href={oneNews.webUrl}> <i className="fas fa-external-link-alt" /> </a>}
-            </div>
+          {oneNews.sectionName && <span className="badge">{oneNews.sectionName} </span>}
+          <div className="one-news__url">
+            {oneNews.webUrl && <a target="_blank" className="one-news__url" href={oneNews.webUrl}> <i className="fas fa-external-link-alt" /> </a>}
           </div>
-        ))}
-
-      </div>
-
+        </div>
+      ))}
+      {news.length > 1 && showArrow()}
     </div>
+
   );
 };
 
